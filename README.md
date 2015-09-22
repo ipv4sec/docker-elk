@@ -1,8 +1,8 @@
 # docker-elk
 
-Elasticsearch: 1.7.2
-Logstash: 1.5.4
-Kibana: 4.1.2
+Elasticsearch: 1.7.2  
+Logstash: 1.5.4  
+Kibana: 4.1.2  
 
 ## run elk
 
