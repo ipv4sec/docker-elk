@@ -25,6 +25,8 @@ RUN apt-get clean && \
 RUN curl -s -L -o - $ES_URL | tar -xz -C /opt \
     && ln -s /opt/elasticsearch-$ES_VERSION /opt/elasticsearch \
     && mkdir /opt/elasticsearch/{data,logs,plugins}
+RUN echo cluster.routing.allocation.disk.watermark.low: 1gb >> /opt/elasticsearch/config/elasticsearch.yml
+RUN echo cluster.routing.allocation.disk.watermark.high: 500mb >> /opt/elasticsearch/config/elasticsearch.yml 
 RUN useradd -U -d /opt/elasticsearch -M -s /usr/bin/bash elasticsearch && \
     chown -R elasticsearch:elasticsearch /opt/elasticsearch-$ES_VERSION
 
